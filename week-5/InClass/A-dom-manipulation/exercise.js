@@ -76,9 +76,8 @@ let underBtn = document.querySelector(".buttons");
 
 addSomeTextBtn.addEventListener("click", addTextFunction);
 
-let para = document.createElement("p");
-
 function addTextFunction() {
+  let para = document.createElement("p");
   underBtn.appendChild(para);
   para.innerText = "Read more below.";
 }
@@ -89,3 +88,12 @@ Task 5
 
 When the 'Larger links!' button is clicked, the text of all links on the page should increase.
 */
+let largerLinkBtn = document.querySelector("#largerLinksBtn");
+
+largerLinkBtn.addEventListener("click", increaseAllLinks);
+let aTags = document.querySelectorAll(".article-title");
+console.log(aTags);
+
+function increaseAllLinks() {
+  aTags.forEach((element) => (element.style.fontSize = "4em"));
+}
